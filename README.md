@@ -73,31 +73,7 @@ sistema-produtos/
 │   │   └── products.js
 │   ├── index.html
 │   └── produto.html
-├── back/
-│   ├── node_modules/
-│   ├── .env
-│   ├── .gitignore
-│   ├── index.js
-│   ├── package.json
-│   └── README.md
-└── README.md
-```
 
-## 🗃️ Estrutura do Banco de Dados
-
-```sql
-CREATE TABLE Produtos (
-    Id int IDENTITY(1,1) PRIMARY KEY,
-    Nome NVARCHAR(255) NOT NULL,
-    Codigo NVARCHAR(50) UNIQUE NOT NULL,
-    Preco DECIMAL(10,2) NOT NULL,
-    Descricao NVARCHAR(MAX) NOT NULL,
-    Estoque INT NOT NULL,
-    Avaliacao INT CHECK (Avaliacao >= 1 AND Avaliacao <= 5),
-    Categoria NVARCHAR(100) NOT NULL,
-    Imagem NVARCHAR(500)
-);
-```
 
 ## ⚙️ Configuração e Instalação
 
