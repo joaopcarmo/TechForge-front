@@ -1,3 +1,5 @@
+Portugues | [English](README_EN.md)
+
 # Sistema de Produtos TECHFORGE
 
 Sistema completo de gerenciamento de produtos desenvolvido com JavaScript vanilla no frontend e Node.js + SQL Server no backend. Permite visualizar, adicionar, editar e excluir produtos de forma dinâmica e responsiva.
@@ -23,7 +25,7 @@ Sistema completo de gerenciamento de produtos desenvolvido com JavaScript vanill
 - Modais interativos
 - Carousel customizado
 
-### Backend
+### Backend (https://github.com/joaopcarmo/TechForge-back)
 
 - Node.js
 - Express.js
@@ -32,6 +34,29 @@ Sistema completo de gerenciamento de produtos desenvolvido com JavaScript vanill
 - dotenv para variáveis de ambiente
 
 - Inteligencia artificial para comentar os codigos.
+
+
+## 🖥️ Telas 
+
+Tela Principa:
+![Tela Principal](https://github.com/user-attachments/assets/5ae8ac08-622f-482d-be45-7afb25f5aece)
+
+
+Tela de detalhes:
+![Tela de detalhes](https://github.com/user-attachments/assets/7f7ff4bd-ed14-42f0-a921-11374fe25351)
+
+
+Adicionar Produto:
+![Adicionar Produto](https://github.com/user-attachments/assets/17ace4ae-5723-453f-bb4b-8889afb09373)
+
+
+Editar Produto:
+![Editar Produto](https://github.com/user-attachments/assets/98acee66-f6a5-423f-844a-9080e45c8787)
+
+
+Remover Produto:
+![Remover Produto](https://github.com/user-attachments/assets/71a36be0-f48f-4bcb-9ece-a51275c13c99)
+
 
 ## 📁 Estrutura do Projeto
 
@@ -129,33 +154,8 @@ cd sistema-produtos/front
    - Ou use um servidor local como Live Server (VS Code)
    - Ou Python: `python -m http.server 8000`
 
-## 🚀 Endpoints da API
+---
 
-### Produtos
-
-| Método   | Endpoint                         | Descrição                    |
-| -------- | -------------------------------- | ---------------------------- |
-| `GET`    | `/produtos`                      | Lista todos os produtos      |
-| `GET`    | `/produtos/codigo/:codigo`       | Busca produto por código     |
-| `GET`    | `/produtos/categoria/:categoria` | Lista produtos por categoria |
-| `POST`   | `/produtos`                      | Adiciona novo produto        |
-| `PUT`    | `/produtos/:codigo`              | Atualiza produto existente   |
-| `DELETE` | `/produtos/:codigo`              | Remove produto               |
-
-### Exemplo de Requisição POST
-
-```json
-{
-  "nome": "Cadeira Gamer",
-  "codigo": "CG001",
-  "preco": 1299.0,
-  "descricao": "Cadeira gamer confortável",
-  "estoque": 10,
-  "avaliacao": 5,
-  "categoria": "Móveis",
-  "imagem": "https://exemplo.com/imagem.jpg"
-}
-```
 
 ## 💡 Funcionalidades do Frontend
 
