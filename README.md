@@ -1,3 +1,5 @@
+Portugues | [English](README_EN.md)
+
 # Sistema de Produtos TECHFORGE
 
 Sistema completo de gerenciamento de produtos desenvolvido com JavaScript vanilla no frontend e Node.js + SQL Server no backend. Permite visualizar, adicionar, editar e excluir produtos de forma dinâmica e responsiva.
@@ -23,7 +25,7 @@ Sistema completo de gerenciamento de produtos desenvolvido com JavaScript vanill
 - Modais interativos
 - Carousel customizado
 
-### Backend
+### Backend (https://github.com/joaopcarmo/TechForge-back)
 
 - Node.js
 - Express.js
