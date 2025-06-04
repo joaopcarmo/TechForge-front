@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechForge - Sistema de Produtos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">TECHFORGE</a>
+            <nav class="nav-links">
+                <a href="#" class="nav-link">LINK 1</a>
+                <a href="#" class="nav-link">LINK 2</a>
+                <a href="#" class="nav-link">LINK 3</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h2 class="hero-title">Destaque</h2>
+            <div class="hero-carousel">
+                <div class="carousel-container">
+                    <img src="https://via.placeholder.com/800x400" alt="Slide 1" class="carousel-image"
+                        id="carousel-image">
+                    <button class="carousel-btn carousel-btn-left" id="prev-btn">&#8249;</button>
+                    <button class="carousel-btn carousel-btn-right" id="next-btn">&#8250;</button>
+                </div>
+                <div class="carousel-dots" id="carousel-dots">
+                    <!-- Dots will be added by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Product Button -->
+        <div class="add-product-section">
+            <button id="add-product-btn" class="add-product-btn">
+                <span class="btn-icon">+</span>
+                <span>Adicionar Produto</span>
+            </button>
+        </div>
+
+        <!-- Products Section -->
+        <section class="products-section">
+            <h2 class="section-title">Últimos Produtos</h2>
+            <div class="products-grid" id="products-grid">
+                <div class="loading-message">Carregando produtos...</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3 class="footer-title">Sobre</h3>
+                    <p class="footer-text">
+                        Aplicação web responsiva desenvolvida com JavaScript no frontend e Node.js no backend,
+                        integrando uma API RESTful com banco de dados. O sistema permite o cadastro, visualização,
+                        edição e exclusão de produtos de forma dinâmica e intuitiva. Inclui recursos como carrossel
+                        automático com imagens, modais interativos para edição e confirmação de exclusão, e organização
+                        visual moderna com foco na experiência do usuário.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Autoria</h3>
+                    <div class="author-info">
+                        <div class="author-avatar">
+                            <span>👤</span>
+                        </div>
+                        <div class="author-details">
+                            <p class="author-name">Aluno: João Pedro Carmo </p>
+                            <p class="author-course">Curso: Análise e desenvolvimento de sistemas </p>
+                            <p class="author-period">Turma: Noturno</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4 class="social-title">Redes Sociais</h4>
+                        <div class="social-buttons">
+                            <a href="https://github.com/joaopcarmo" class="social-link github" target="_blank"
+                                rel="noopener noreferrer">GitHub</a>
+                            <a href="https://www.linkedin.com/in/joaopcarmo/" class="social-link linkedin"
+                                target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            <a href="#" class="social-link instagram">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechForge - Sistema de Produtos. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add Product Modal -->
+    <div id="add-product-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Adicionar Produto</h2>
+                <button class="close-btn" id="add-modal-close">×</button>
+            </div>
+
+            <form id="add-product-form" class="modal-form">
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Código</label>
+                    <input type="text" name="codigo" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Preço</label>
+                    <input type="number" step="0.01" name="preco" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Descrição</label>
+                    <textarea name="descricao" required rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Estoque</label>
+                    <input type="number" name="estoque" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Avaliação (1-5)</label>
+                    <input type="number" step="0.1" min="1" max="5" name="avaliacao" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Categoria</label>
+                    <input type="text" name="categoria" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Imagem (URL)</label>
+                    <input type="text" name="imagem">
+                </div>
+
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="add-modal-cancel">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="add-modal-submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div id="edit-product-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Editar Produto</h2>
+                <button class="close-btn" id="edit-modal-close">×</button>
+            </div>
+
+            <form id="edit-product-form" class="modal-form">
+                <input type="hidden" name="codigo" id="edit-codigo">
+
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" name="nome" id="edit-nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Preço</label>
+                    <input type="number" step="0.01" name="preco" id="edit-preco" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Descrição</label>
+                    <textarea name="descricao" id="edit-descricao" required rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Estoque</label>
+                    <input type="number" name="estoque" id="edit-estoque" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Avaliação (1-5)</label>
+                    <input type="number" min="1" max="5" name="avaliacao" id="edit-avaliacao" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Categoria</label>
+                    <input type="text" name="categoria" id="edit-categoria" required>
+                </div>
+
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="edit-modal-cancel">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="edit-modal-submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirm Modal -->
+    <div id="delete-confirm-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content confirm-modal">
+            <div class="modal-header">
+                <div class="warning-icon">⚠️</div>
+                <h2>Confirmar Exclusão</h2>
+            </div>
+
+            <p class="confirm-text" id="delete-confirm-text">
+                Tem certeza que deseja excluir este produto? Esta ação não pode ser desfeita.
+            </p>
+
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="delete-modal-cancel">Cancelar</button>
+                <button class="btn btn-danger" id="delete-modal-confirm">Excluir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/modals.js"></script>
+</body>
+
+</html>
