@@ -131,34 +131,6 @@ cd sistema-produtos/front
    - Or use a local server like Live Server (VS Code)
    - Or via Python: `python -m http.server 8000`
 
-## 🚀 API Endpoints
-
-### Products
-
-| Method   | Endpoint                         | Description                |
-| -------- | -------------------------------- | -------------------------- |
-| `GET`    | `/produtos`                      | List all products          |
-| `GET`    | `/produtos/codigo/:codigo`       | Get product by code        |
-| `GET`    | `/produtos/categoria/:categoria` | Get products by category   |
-| `POST`   | `/produtos`                      | Add a new product          |
-| `PUT`    | `/produtos/:codigo`              | Update an existing product |
-| `DELETE` | `/produtos/:codigo`              | Delete a product           |
-
-### Sample POST Request
-
-```json
-{
-  "nome": "Gaming Chair",
-  "codigo": "CG001",
-  "preco": 1299.0,
-  "descricao": "Comfortable gaming chair",
-  "estoque": 10,
-  "avaliacao": 5,
-  "categoria": "Furniture",
-  "imagem": "https://example.com/image.jpg"
-}
-```
-
 ## 💡 Frontend Features
 
 ### Main Page (index.html)
